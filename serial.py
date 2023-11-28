@@ -30,8 +30,8 @@ class SerialGenerator:
             return self.start
         else :
             self.start += 1
+            self.count += 1
             # print("nextStartNum=", self.start)
-        self.count += 1
         return self.start
 
     def reset(self):
