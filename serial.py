@@ -14,7 +14,7 @@ class SerialGenerator:
 
     >>> serial.reset()
 
-    >>> serial.generate()y
+    >>> serial.generate()
     100
     """
     def __init__(self, start):
@@ -26,16 +26,19 @@ class SerialGenerator:
         """When called, start number increase by 1."""
         if self.count == 0 :
             # print("currStartNum=", self.start)
+            self.count += 1
             return self.start
         else :
             self.start += 1
             # print("nextStartNum=", self.start)
         self.count += 1
-        return self.startrun
+        return self.start
 
     def reset(self):
         """Function resets to intial start number."""
-        return self.start - self.count
+        self.start = self.start - self.count + 1
+        self.count = 0
+        return None
 
 
 
