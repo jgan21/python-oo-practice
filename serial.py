@@ -19,11 +19,18 @@ class SerialGenerator:
     """
     def __init__(self, start):
         """Create serial number starting at a given number(ie.100)."""
+        # start should never change
         self.start = start
         self.count = 0
+        # can have self.next attribute/property
+
+
+
+    # don't forget to write a __repr__ for this class
 
     def generate(self):
         """When called, start number increase by 1."""
+        # potential other way to write this
         if self.count == 0 :
             # print("currStartNum=", self.start)
             self.count += 1
