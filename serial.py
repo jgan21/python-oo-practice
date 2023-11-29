@@ -25,9 +25,14 @@ class SerialGenerator:
         # can have self.next attribute/property
         self.next = self.start + self.count
 
-
-
     # don't forget to write a __repr__ for this class
+    def __repr__(self):
+        """Represents what attributes this instance has"""
+
+        return (
+            f"<SerialGenerator start={self.start}" +
+            f" count={self.count} next={self.next}>"
+            )
 
     def generate(self):
         """When called, start number increase by 1."""
