@@ -23,6 +23,7 @@ class SerialGenerator:
         self.start = start
         self.count = 0
         # can have self.next attribute/property
+        self.next = self.start + self.count
 
 
 
@@ -34,16 +35,16 @@ class SerialGenerator:
         if self.count == 0 :
             # print("currStartNum=", self.start)
             self.count += 1
-            return self.start
+            return self.next
         else :
-            self.start += 1
+            self.next += 1
             self.count += 1
             # print("nextStartNum=", self.start)
-        return self.start
+        return self.next
 
     def reset(self):
         """Function resets to intial start number."""
-        self.start = self.start - self.count + 1
+        self.next = self.next - self.count + 1
         self.count = 0
         return None
 
