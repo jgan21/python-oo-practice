@@ -47,3 +47,23 @@ class WordFinder:
             self.words.append(word)
         print(f"{len(self.words)} words read")
         file.close()
+
+
+class SpecialWordFinder(WordFinder):
+    """Special Word Finder: finds word in list without blank lines or comment"""
+
+    def __init__(self, path_to_file) :
+        super().__init__(path_to_file)
+
+    def cleanUpNewLines(self):
+        clean_word = []
+        words = super().cleanUpNewLines()
+        print("whatIsWords=", words)
+        for word in words :
+            if word[0:1] != "#" and word != "" :
+                print("are we here")
+                clean_word.append(word)
+
+        print("whatIsCleanWord=", clean_word)
+
+        return clean_word
